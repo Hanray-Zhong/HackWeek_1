@@ -1,0 +1,11 @@
+#需要过滤的文件夹目录
+Child of Light/.vs/
+Child of Light/Library/
+Child of Light/UnityPackageManager/
+Child of Light/Assets/Cinemachine/
+Child of Light/Assets/Fog of War/
+Demo/
+
+#需要过滤的文件
+*.csproj
+*.sln
