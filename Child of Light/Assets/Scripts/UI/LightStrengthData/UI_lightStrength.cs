@@ -15,6 +15,6 @@ public class UI_lightStrength : MonoBehaviour {
 	}
 
 	private void Update() {
-		lightStrength_txt.text = (LightController.Lerp * 20).ToString();
+		lightStrength_txt.text = (LightController.Lerp * 200).ToString();
 	}
 }
