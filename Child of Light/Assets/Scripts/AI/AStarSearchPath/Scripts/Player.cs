@@ -119,15 +119,15 @@ public class Player : GameDev {
 	private bool RaycastCheck(Vector2 playerPos, Vector2 Target) {
 		Vector2 moveDir = (Target - playerPos).normalized;
 		RaycastHit2D hit_1 = Physics2D.Raycast(playerPos,  
-									moveDir, Vector2.Distance(Target, playerPos), 1 << LayerMask.NameToLayer("Solid"));
+									moveDir, Vector2.Distance(Target, playerPos), 1 << LayerMask.NameToLayer("Map"));
 		RaycastHit2D hit_2 = Physics2D.Raycast(playerPos + new Vector2(0.25f, 0),  
-									moveDir, Vector2.Distance(Target, playerPos + new Vector2(0.25f, 0)), 1 << LayerMask.NameToLayer("Solid"));
+									moveDir, Vector2.Distance(Target, playerPos + new Vector2(0.25f, 0)), 1 << LayerMask.NameToLayer("Map"));
 		RaycastHit2D hit_3 = Physics2D.Raycast(playerPos + new Vector2(-0.25f, 0), 
-									moveDir, Vector2.Distance(Target, playerPos + new Vector2(-0.25f, 0)), 1 << LayerMask.NameToLayer("Solid"));
+									moveDir, Vector2.Distance(Target, playerPos + new Vector2(-0.25f, 0)), 1 << LayerMask.NameToLayer("Map"));
 		RaycastHit2D hit_4 = Physics2D.Raycast(playerPos + new Vector2(0, 0.25f),  
-									moveDir, Vector2.Distance(Target, playerPos + new Vector2(0, 0.25f)), 1 << LayerMask.NameToLayer("Solid"));
+									moveDir, Vector2.Distance(Target, playerPos + new Vector2(0, 0.25f)), 1 << LayerMask.NameToLayer("Map"));
 		RaycastHit2D hit_5 = Physics2D.Raycast(playerPos + new Vector2(0, -0.25f),  
-									moveDir, Vector2.Distance(Target, playerPos + new Vector2(0, -0.25f)), 1 << LayerMask.NameToLayer("Solid"));
+									moveDir, Vector2.Distance(Target, playerPos + new Vector2(0, -0.25f)), 1 << LayerMask.NameToLayer("Map"));
 		return (hit_1.collider == null && hit_2.collider == null && hit_3.collider == null && hit_4.collider == null && hit_5.collider == null);
 	}
 }
