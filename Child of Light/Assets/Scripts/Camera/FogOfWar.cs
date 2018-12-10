@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FogOfWar : MonoBehaviour {
 
-	[Range(0,3)]
+	[Range(0,2)]
     public float Lerp = 0;//使用它来调整可视区域的大小
     public Texture2D MaskTex;
     public Shader ScreanShader;

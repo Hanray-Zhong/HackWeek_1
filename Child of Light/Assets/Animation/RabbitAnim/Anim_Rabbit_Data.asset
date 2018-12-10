@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: Anim_Rabbit_Data
+  m_EditorClassIdentifier: 
+  dataName: Anim_Rabbit
+  dragonBonesJSON: {fileID: 4900000, guid: 50b2cb23920b8ec45be71d46213a5f9b, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 04028db116688e74691f9423d5ec5aef, type: 3}
+    texture: {fileID: 2800000, guid: e6a7a0d4a1fb518499d67c6608a28903, type: 3}
+    material: {fileID: 2100000, guid: b3049956e6d47514d8a3241e1af84819, type: 2}
+    uiMaterial: {fileID: 0}

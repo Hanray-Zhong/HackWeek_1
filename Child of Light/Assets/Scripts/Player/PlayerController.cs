@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DragonBones;
 
 public class PlayerController : MonoBehaviour {
 	private float 			hl;
@@ -10,10 +11,15 @@ public class PlayerController : MonoBehaviour {
 	private float 			MAX_SprintEnergy = 100;
 	private bool 			SERecoverEnabled = true;
 	private Vector2 		MoveDir;
+	[Header("Animation")]
+	public UnityArmatureComponent Anim;
+	[Header("Particle System")]
 	public GameObject 		SpreadPS;
 	public GameObject 		SprintPS;
+	[Header("Move")]
 	public float Speed;
 	public float Drag;
+	[Header("Sprint")]
 	public float SprintEnergy = 100;
 	public float SprintEnergyDec;
 	public float SprintEnergyInc;
@@ -55,16 +61,16 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	void Lighting () {
 		if ( Button_A >= 1 ) {
-			Debug.Log( "发光" );
+
 		}
 	}
 	/// <summary>
-	///	发光
+	///	冲刺
 	/// </summary>
 	void Sprinting () {
 		if ( Button_X >= 1 && SprintEnergy > 0 ) {
-			Debug.Log( "冲刺" );
 			Speed = 4500;
+			Anim.animation.timeScale = 2.25f;
 			var main = SpreadPS.GetComponent< ParticleSystem >().main;
 			main.loop = false;
 			main = SprintPS.GetComponent< ParticleSystem >().main;
@@ -76,6 +82,7 @@ public class PlayerController : MonoBehaviour {
 			}
 		} else {
 			Speed = 3000;
+			Anim.animation.timeScale = 1.5f;
 			var main = SprintPS.GetComponent< ParticleSystem >().main;
 			main.loop = false;
 			main = SpreadPS.GetComponent< ParticleSystem >().main;
@@ -90,7 +97,7 @@ public class PlayerController : MonoBehaviour {
 		if (Button_X <= 0.1 && SERecoverEnabled && SprintEnergy <= MAX_SprintEnergy) {
 			SprintEnergy += SprintEnergyInc * Time.deltaTime;
 		}
-		if (!SERecoverEnabled) {
+		if (!SERecoverEnabled && Button_X <= 0.1) {
 			StartCoroutine(StartRecover());
 		}
 	}
@@ -98,5 +105,6 @@ public class PlayerController : MonoBehaviour {
 	IEnumerator StartRecover() {
 		yield return new WaitForSeconds(3f);
 		SERecoverEnabled = true;
+		StopAllCoroutines();
 	}
 }

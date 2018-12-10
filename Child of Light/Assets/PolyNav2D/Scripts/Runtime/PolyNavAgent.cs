@@ -156,14 +156,14 @@ public class PolyNavAgent : MonoBehaviour{
 			return false;
 		}
 
-		//goal is almost the same as the last goal. Nothing happens for performace in case it's called frequently
+		// goal is almost the same as the last goal. Nothing happens for performace in case it's called frequently
 		if ((goal - primeGoal).magnitude < Mathf.Epsilon)
 			return true;
 
 		reachedCallback = callback;
 		primeGoal = goal;
 
-		//goal is almost the same as agent position. We consider arrived immediately
+		// goal is almost the same as agent position. We consider arrived immediately
 		if ((goal - position).magnitude < stoppingDistance){
 			OnArrived();
 			return true;
@@ -349,6 +349,13 @@ public class PolyNavAgent : MonoBehaviour{
 		Vector2 steer= desiredVelocity - velocity;
 		steer = Truncate(steer, maxForce);
 		return steer;
+	}
+
+	public Vector2 GetNormalizedVelocity() {
+		if (nextPoint != null)
+			return (nextPoint - position).normalized;
+		else
+			return new Vector2(0, 0);
 	}
 
 	//slowing at target's arrival

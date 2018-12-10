@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Map
+  - PolyNav2D
+  - Enemy
+  - Boss
+  - HeartPart
+  - Spring
+  - FinalText
+  - SpringInitializer
   layers:
   - Default
   - TransparentFX
@@ -15,13 +22,13 @@ TagManager:
   - 
   - 
   - Map
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Boss
+  - Card
+  - Heart
+  - HeartPart
+  - Spring
   - 
   - 
   - 

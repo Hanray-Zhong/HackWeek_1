@@ -22,7 +22,7 @@ public class Lighting : MonoBehaviour {
 		button_a = Input.GetAxis("Button_A");
 
 		if (button_a < 1 && LightController != null) {
-			if (LightController.Lerp > 0) {
+			if (LightController.Lerp > 0.15) {
 				// 光衰弱
 				LightController.Lerp -= decreaseSpeed * Time.deltaTime;
 			}

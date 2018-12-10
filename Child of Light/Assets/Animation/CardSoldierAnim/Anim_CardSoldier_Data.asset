@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: Anim_CardSoldier_Data
+  m_EditorClassIdentifier: 
+  dataName: Anim_CardSoldier
+  dragonBonesJSON: {fileID: 4900000, guid: 34864dd231c607a48815463bdfe16028, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 133aa2253b8d82e47ab873f492e62c17, type: 3}
+    texture: {fileID: 2800000, guid: 9e86ec4be9e3fd548b839dd0a8740bba, type: 3}
+    material: {fileID: 2100000, guid: 460ad50f05e8eea4ebf4d36f3dd7638a, type: 2}
+    uiMaterial: {fileID: 0}
